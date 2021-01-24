@@ -1,0 +1,12 @@
+pub mod betelgeuse_balances;
+pub mod betelgeuse_democracy;
+pub mod betelgeuse_elections_phragmen;
+pub mod betelgeuse_staking;
+pub mod betelgeuse_treasury;
+pub mod frame_system;
+pub mod pallet_collective;
+pub mod pallet_im_online;
+pub mod pallet_proxy;
+pub mod pallet_scheduler;
+pub mod pallet_session;
+pub mod pallet_timestamp;

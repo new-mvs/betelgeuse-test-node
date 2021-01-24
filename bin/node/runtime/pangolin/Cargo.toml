@@ -1,0 +1,154 @@
+[package]
+authors    = ["Betelgeuse Network <hello@betelgeuse.network>"]
+build      = "build.rs"
+edition    = "2018"
+homepage   = "https://betelgeuse.network/"
+license    = "Unlicense"
+name       = "pangolin-runtime"
+readme     = "README.md"
+repository = "https://github.com/betelgeuse-network/betelgeuse-common/"
+version    = "1.0.10"
+
+[dependencies]
+# crates
+codec             = { package = "parity-scale-codec", version = "1.3.5", default-features = false }
+serde             = { version = "1.0.118", optional = true }
+smallvec          = { version = "1.6.0" }
+static_assertions = { version = "1.1.0" }
+# betelgeuse
+betelgeuse-balances                   = { default-features = false, path = "../../../../frame/balances" }
+betelgeuse-balances-rpc-runtime-api   = { default-features = false, path = "../../../../frame/balances/rpc/runtime-api" }
+betelgeuse-claims                     = { default-features = false, path = "../../../../frame/claims" }
+betelgeuse-crab-backing               = { default-features = false, path = "../../../../frame/bridge/crab/backing" }
+betelgeuse-crab-issuing               = { default-features = false, path = "../../../../frame/bridge/crab/issuing" }
+betelgeuse-democracy                  = { default-features = false, path = "../../../../frame/democracy" }
+betelgeuse-elections-phragmen         = { default-features = false, path = "../../../../frame/elections-phragmen" }
+betelgeuse-ethereum-backing           = { default-features = false, path = "../../../../frame/bridge/ethereum/backing" }
+betelgeuse-ethereum-relay             = { default-features = false, path = "../../../../frame/bridge/ethereum/relay" }
+betelgeuse-evm                        = { default-features = false, path = "../../../../frame/evm" }
+betelgeuse-header-mmr                 = { default-features = false, path = "../../../../frame/header-mmr" }
+betelgeuse-header-mmr-rpc-runtime-api = { default-features = false, path = "../../../../frame/header-mmr/rpc/runtime-api" }
+betelgeuse-relay-authorities          = { default-features = false, path = "../../../../frame/bridge/relay-authorities" }
+betelgeuse-relay-primitives           = { default-features = false, path = "../../../../primitives/relay" }
+betelgeuse-relayer-game               = { default-features = false, path = "../../../../frame/bridge/relayer-game" }
+betelgeuse-staking                    = { default-features = false, path = "../../../../frame/staking" }
+betelgeuse-staking-rpc-runtime-api    = { default-features = false, path = "../../../../frame/staking/rpc/runtime-api" }
+betelgeuse-support                    = { default-features = false, path = "../../../../frame/support" }
+betelgeuse-treasury                   = { default-features = false, path = "../../../../frame/treasury" }
+betelgeuse-tron-backing               = { default-features = false, path = "../../../../frame/bridge/tron/backing" }
+betelgeuse-vesting                    = { default-features = false, path = "../../../../frame/vesting" }
+drml-primitives                     = { default-features = false, path = "../../primitives" }
+dvm-ethereum                        = { default-features = false, path = "../../../../frame/dvm" }
+dvm-rpc-runtime-api                 = { default-features = false, path = "../../../../frame/dvm/rpc/runtime-api" }
+ethereum-primitives                 = { default-features = false, path = "../../../../primitives/ethereum-primitives" }
+# substrate
+frame-executive                            = { default-features = false, git = "https://github.com/new-mvs/substrate.git", branch = "common-library" }
+frame-support                              = { default-features = false, git = "https://github.com/new-mvs/substrate.git", branch = "common-library" }
+frame-system                               = { default-features = false, git = "https://github.com/new-mvs/substrate.git", branch = "common-library" }
+frame-system-rpc-runtime-api               = { default-features = false, git = "https://github.com/new-mvs/substrate.git", branch = "common-library" }
+pallet-authority-discovery                 = { default-features = false, git = "https://github.com/new-mvs/substrate.git", branch = "common-library" }
+pallet-authorship                          = { default-features = false, git = "https://github.com/new-mvs/substrate.git", branch = "common-library" }
+pallet-babe                                = { default-features = false, git = "https://github.com/new-mvs/substrate.git", branch = "common-library" }
+pallet-collective                          = { default-features = false, git = "https://github.com/new-mvs/substrate.git", branch = "common-library" }
+pallet-finality-tracker                    = { default-features = false, git = "https://github.com/new-mvs/substrate.git", branch = "common-library" }
+pallet-grandpa                             = { default-features = false, git = "https://github.com/new-mvs/substrate.git", branch = "common-library" }
+pallet-im-online                           = { default-features = false, git = "https://github.com/new-mvs/substrate.git", branch = "common-library" }
+pallet-membership                          = { default-features = false, git = "https://github.com/new-mvs/substrate.git", branch = "common-library" }
+pallet-offences                            = { default-features = false, git = "https://github.com/new-mvs/substrate.git", branch = "common-library" }
+pallet-proxy                               = { default-features = false, git = "https://github.com/new-mvs/substrate.git", branch = "common-library" }
+pallet-randomness-collective-flip          = { default-features = false, git = "https://github.com/new-mvs/substrate.git", branch = "common-library" }
+pallet-scheduler                           = { default-features = false, git = "https://github.com/new-mvs/substrate.git", branch = "common-library" }
+pallet-session                             = { default-features = false, git = "https://github.com/new-mvs/substrate.git", branch = "common-library" }
+pallet-sudo                                = { default-features = false, git = "https://github.com/new-mvs/substrate.git", branch = "common-library" }
+pallet-timestamp                           = { default-features = false, git = "https://github.com/new-mvs/substrate.git", branch = "common-library" }
+pallet-transaction-payment                 = { default-features = false, git = "https://github.com/new-mvs/substrate.git", branch = "common-library" }
+pallet-transaction-payment-rpc-runtime-api = { default-features = false, git = "https://github.com/new-mvs/substrate.git", branch = "common-library" }
+sp-api                                     = { default-features = false, git = "https://github.com/new-mvs/substrate.git", branch = "common-library" }
+sp-application-crypto                      = { default-features = false, git = "https://github.com/new-mvs/substrate.git", branch = "common-library" }
+sp-authority-discovery                     = { default-features = false, git = "https://github.com/new-mvs/substrate.git", branch = "common-library" }
+sp-block-builder                           = { default-features = false, git = "https://github.com/new-mvs/substrate.git", branch = "common-library" }
+sp-consensus-babe                          = { default-features = false, git = "https://github.com/new-mvs/substrate.git", branch = "common-library" }
+sp-core                                    = { default-features = false, git = "https://github.com/new-mvs/substrate.git", branch = "common-library" }
+sp-inherents                               = { default-features = false, git = "https://github.com/new-mvs/substrate.git", branch = "common-library" }
+sp-io                                      = { default-features = false, git = "https://github.com/new-mvs/substrate.git", branch = "common-library" }
+sp-offchain                                = { default-features = false, git = "https://github.com/new-mvs/substrate.git", branch = "common-library" }
+sp-runtime                                 = { default-features = false, git = "https://github.com/new-mvs/substrate.git", branch = "common-library" }
+sp-session                                 = { default-features = false, git = "https://github.com/new-mvs/substrate.git", branch = "common-library" }
+sp-staking                                 = { default-features = false, git = "https://github.com/new-mvs/substrate.git", branch = "common-library" }
+sp-std                                     = { default-features = false, git = "https://github.com/new-mvs/substrate.git", branch = "common-library" }
+sp-transaction-pool                        = { default-features = false, git = "https://github.com/new-mvs/substrate.git", branch = "common-library" }
+sp-version                                 = { default-features = false, git = "https://github.com/new-mvs/substrate.git", branch = "common-library" }
+
+[build-dependencies]
+# substrate
+wasm-builder-runner = { package = "substrate-wasm-builder-runner", git = "https://github.com/new-mvs/substrate.git", branch = "common-library" }
+
+[features]
+default = ["std"]
+std     = [
+	"codec/std",
+	"serde",
+	"betelgeuse-balances/std",
+	"betelgeuse-balances-rpc-runtime-api/std",
+	"betelgeuse-claims/std",
+	"betelgeuse-crab-backing/std",
+	"betelgeuse-crab-issuing/std",
+	"betelgeuse-democracy/std",
+	"betelgeuse-elections-phragmen/std",
+	"betelgeuse-ethereum-backing/std",
+	"betelgeuse-ethereum-relay/std",
+	"betelgeuse-evm/std",
+	"betelgeuse-header-mmr/std",
+	"betelgeuse-header-mmr-rpc-runtime-api/std",
+	"betelgeuse-relay-authorities/std",
+	"betelgeuse-relay-primitives/std",
+	"betelgeuse-relayer-game/std",
+	"betelgeuse-staking/std",
+	"betelgeuse-staking-rpc-runtime-api/std",
+	"betelgeuse-support/std",
+	"betelgeuse-treasury/std",
+	"betelgeuse-tron-backing/std",
+	"betelgeuse-vesting/std",
+	"drml-primitives/std",
+	"dvm-ethereum/std",
+	"dvm-rpc-runtime-api/std",
+	"ethereum-primitives/std",
+	"frame-executive/std",
+	"frame-support/std",
+	"frame-system/std",
+	"frame-system-rpc-runtime-api/std",
+	"pallet-authority-discovery/std",
+	"pallet-authorship/std",
+	"pallet-babe/std",
+	"pallet-collective/std",
+	"pallet-finality-tracker/std",
+	"pallet-grandpa/std",
+	"pallet-im-online/std",
+	"pallet-membership/std",
+	"pallet-offences/std",
+	"pallet-proxy/std",
+	"pallet-randomness-collective-flip/std",
+	"pallet-scheduler/std",
+	"pallet-session/std",
+	"pallet-sudo/std",
+	"pallet-timestamp/std",
+	"pallet-transaction-payment/std",
+	"pallet-transaction-payment-rpc-runtime-api/std",
+	"sp-api/std",
+	"sp-application-crypto/std",
+	"sp-authority-discovery/std",
+	"sp-block-builder/std",
+	"sp-consensus-babe/std",
+	"sp-core/std",
+	"sp-inherents/std",
+	"sp-io/std",
+	"sp-offchain/std",
+	"sp-runtime/std",
+	"sp-session/std",
+	"sp-staking/std",
+	"sp-std/std",
+	"sp-transaction-pool/std",
+	"sp-version/std",
+]
+
+with-tracing = ["frame-executive/with-tracing"]

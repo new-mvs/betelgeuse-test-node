@@ -1,0 +1,25 @@
+[package]
+authors     = ["Betelgeuse Network <hello@betelgeuse.network>"]
+description = "DRML node runtime primitives"
+edition     = "2018"
+homepage    = "https://betelgeuse.network/"
+license     = "GPL-3.0"
+name        = "drml-primitives"
+readme      = "README.md"
+repository  = "https://github.com/betelgeuse-network/betelgeuse-common/"
+version     = "1.0.10"
+
+[dependencies]
+# substrate
+sp-core    = { default-features = false, git = "https://github.com/new-mvs/substrate.git", branch = "common-library" }
+sp-runtime = { default-features = false, git = "https://github.com/new-mvs/substrate.git", branch = "common-library" }
+
+[features]
+default = ["std"]
+
+std = ["substrate-primitives-std"]
+
+substrate-primitives-std = [
+	"sp-core/std",
+	"sp-runtime/std",
+]

@@ -1,0 +1,20 @@
+[package]
+authors     = ["Betelgeuse Network <hello@betelgeuse.network>"]
+description = "Betelgeuse CLI interface."
+edition     = "2018"
+homepage    = "https://betelgeuse.network/"
+license     = "GPL-3.0"
+name        = "betelgeuse-cli"
+readme      = "README.md"
+repository  = "https://github.com/betelgeuse-network/betelgeuse-common/"
+version     = "1.3.0"
+
+[dependencies]
+# crates
+serde = { version = "1.0.118", features = ["derive"] }
+toml  = { version = "0.5.7" }
+# substrate
+sc-cli        = { git = "https://github.com/new-mvs/substrate.git", branch = "common-library" }
+sc-client-api = { git = "https://github.com/new-mvs/substrate.git", branch = "common-library" }
+sc-service    = { git = "https://github.com/new-mvs/substrate.git", branch = "common-library" }
+sc-tracing    = { git = "https://github.com/new-mvs/substrate.git", branch = "common-library" }
